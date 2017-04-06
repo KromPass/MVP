@@ -1,0 +1,19 @@
+@import '../helpers/reset.scss';
+@import '../helpers/helpers.scss';
+@import '../helpers/sliding.scss';
+
+body {
+	padding-top: 64px !important;
+	padding-bottom: 57px !important;
+}
+
+.top-bar {
+	position: fixed !important;
+	top: 0 !important;
+}
+
+.bottom-bar {
+	position: fixed !important;
+	bottom: 0 !important;
+	width: 100%;
+}

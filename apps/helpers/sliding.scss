@@ -1,0 +1,19 @@
+$slidingTime: 500ms;
+
+.from-left-enter {
+	transform: translate(100%);
+}
+
+.from-left-enter-active {
+	transform: translate(0%);
+	transition: transform $slidingTime ease;
+}
+
+.from-left-leave {
+	transform: translate(-100%);
+}
+
+.from-left-leave-active {
+	transform: translate(0%);
+	transition: transform $slidingTime ease;
+}
