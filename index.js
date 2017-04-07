@@ -61,7 +61,7 @@ app.use(async (ctx, next) => {
 	}
 });
 
-app.use(mount('/admin', basicAuth({ name: 'admin', pass: config.secret })));
+// app.use(mount('/admin', basicAuth({ name: 'admin', pass: config.secret })));
 
 //social connects
 const computeConnectedUser = (accessToken, refreshToken, profile, done) => {

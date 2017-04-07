@@ -38,11 +38,12 @@ export default class Navigation extends React.Component {
 		};
 
 		let entryGenerator = entry => {
+            const Icon = icons[entry.icon];
 			return (
 				<ListItem
 					key={entry.name}
 					primaryText={_.capitalize(entry.name)}
-					// leftIcon={<icons.people />}
+					leftIcon={Icon && <Icon />}
 					containerElement={<Link to={linkGenerator(entry)} />}
 					primaryTogglesNestedList={true}
 					nestedItems={entry.children ? entry.children.map(entryGenerator) : []}

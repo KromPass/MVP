@@ -6,9 +6,11 @@ const defaultState = {
 	menuEntries: [{
 		name: 'users',
 		entity: 'user',
+        icon: 'people'
 	},{
 		name: 'services',
 		entity: 'service',
+        icon: 'fitnessCenter',
 		children: [{
 			name: 'CrossFit',
 			entity: 'service',
@@ -21,6 +23,7 @@ const defaultState = {
 	},{
 		name: 'classes',
 		entity: 'class',
+        icon: 'schedule',
 		children: [{
 			name: 'CrossFit',
 			entity: 'class',
@@ -33,17 +36,21 @@ const defaultState = {
 	},{
 		name: 'articles',
 		entity: 'article',
+        icon: 'edit',
 	},{
 		name: 'events',
 		entity: 'article',
+        icon: 'event',
 		filters: { category: 'event' }
 	}],
 	configurationEntries: [{
 		name: 'plans',
 		entity: 'plan',
+        icon: 'tag',
 	},{
 		name: 'settings',
 		entity: 'setting',
+        icon: 'settings',
 	}],
 	failure: null,
 	entity: null,

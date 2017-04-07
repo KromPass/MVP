@@ -12,7 +12,7 @@ import IconScore from 'material-ui/svg-icons/editor/format-list-numbered';
 import IconResults from 'material-ui/svg-icons/action/trending-up';
 import IconNews from 'material-ui/svg-icons/social/whatshot';
 import IconProfile from 'material-ui/svg-icons/social/person';
-import { push, setMenu } from '../store/navigation.actions.js';
+import { push, setMenu } from '../reducers/navigation.actions.js';
 
 @connect((state, props) => ({
 	navigation: state.navigation,

@@ -7,7 +7,7 @@ import { Router, Route, Link, IndexRoute, IndexRedirect, browserHistory } from '
 import { AppBar, IconButton, Avatar } from 'material-ui';
 import IconBack from 'material-ui/svg-icons/hardware/keyboard-arrow-left';
 
-import { push, pop } from '../store/navigation.actions.js';
+import { push, pop } from '../reducers/navigation.actions.js';
 
 const avatar = require('../../img/avatar.jpg');
 

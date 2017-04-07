@@ -4,18 +4,16 @@ import { connect } from 'react-redux';
 
 import { authorize } from '../../helpers/authorize.js';
 
-const mapStateToProps = (state, props) => ({
-	state,
-});
-
 @authorize('admin', '/auth')
-@connect(mapStateToProps)
+@connect((state, props) => ({
+	state,
+}))
 export default class Home extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
 	render() {
-		return null;
+		return <h1>home</h1>;
 	}
 }

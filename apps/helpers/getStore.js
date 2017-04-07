@@ -9,7 +9,15 @@ import { REHYDRATE } from 'redux-persist/constants';
 import { persistStore, autoRehydrate } from 'redux-persist';
 import createActionBuffer from 'redux-action-buffer';
 
+import config from '../../config/config.js';
+import auth from '../auth/auth.reducer.js';
+import notification from '../notification/notification.reducer.js';
+import forms from '../form/form.reducer.js';
+
+const defaultReducers = { config: () => config, auth, notification, forms };
+
 const getStore = ({ reducers, history }) => {
+    reducers = { ...defaultReducers, ...reducers };
     const finalReducer = combineReducers(reducers);
     const historyMiddleware = routerMiddleware(history);
     const loggerMiddleware = createLogger();

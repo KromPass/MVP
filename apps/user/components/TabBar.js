@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styles from '../app.scss';
 import { Router, Route, Link, IndexRoute, IndexRedirect, browserHistory } from 'react-router';
 import { Paper, Tabs, Tab } from 'material-ui';
-import { setTab } from '../store/navigation.actions.js';
+import { setTab } from '../reducers/navigation.actions.js';
 
 @connect((state, props) => ({
 	navigation: state.navigation,

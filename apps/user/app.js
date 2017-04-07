@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 
 import getApp from '../helpers/getApp';
 
-import * as reducers from './store/reducers';
+import * as reducers from './reducers';
 import router, { history } from './router';
 const persistWhitelist = ['auth'];
 

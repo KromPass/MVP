@@ -10,7 +10,7 @@ import SwipeableViews from 'react-swipeable-views';
 import { black, transparent, pinkA200, grey400 } from 'material-ui/styles/colors';
 import icons from '../../helpers/icons.js';
 
-import { setTabs, setTab, cleanTabs } from '../store/navigation.actions.js';
+import { setTabs, setTab, cleanTabs } from '../reducers/navigation.actions.js';
 
 const avatar = require('../../img/avatar.jpg');
 

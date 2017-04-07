@@ -8,11 +8,10 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import { MuiThemeProvider, getMuiTheme } from 'material-ui/styles';
 import { Flex, Box } from 'reflexbox';
-import {  Snackbar } from 'material-ui';
+import { Snackbar } from 'material-ui';
+import { TopBar, Navigation }  from './';
 
-import { denotify } from '../../notification/notification.actions.js';
-import TopBar from './TopBar';
-import Navigation from './Navigation';
+import { denotify } from '../../notification/notification.actions';
 
 let theme = getMuiTheme({
 	fontFamily: 'Verdana',
@@ -46,11 +45,6 @@ export default class Layout extends React.Component {
 		return context;
 	}
 
-	@autobind
-	denotify() {
-		this.props.dispatch(denotify());
-	}
-
 	render() {
         const { auth, notification, navigation } = this.props;
         // {this.props.location.action == 'POP' ? 'slide-right': 'slide-left'}
@@ -62,6 +56,8 @@ export default class Layout extends React.Component {
             leave: styles[transitionName + '-leave'],
             leaveActive: styles[transitionName + '-leave-active'],
         };
+
+        const denotify = () => this.props.dispatch(denotify());
 
 		return (
 			<MuiThemeProvider muiTheme={theme}>
@@ -81,7 +77,7 @@ export default class Layout extends React.Component {
                             </Box>
                         </Flex>
                     </Box>
-                    <Snackbar bodyStyle={this.props.notification.style} open={this.props.notification.value ? true : false} message={this.props.notification.value} autoHideDuration={5000} onActionTouchTap={this.denotify} onRequestClose={this.denotify} action="X Close" />
+                    <Snackbar bodyStyle={this.props.notification.style} open={this.props.notification.value ? true : false} message={this.props.notification.value} autoHideDuration={5000} onActionTouchTap={denotify} onRequestClose={denotify} action="X Close" />
 				</Flex>
 			</MuiThemeProvider>
 		);
