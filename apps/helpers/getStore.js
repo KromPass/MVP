@@ -14,7 +14,7 @@ import auth from '../auth/auth.reducer.js';
 import notification from '../notification/notification.reducer.js';
 import forms from '../form/form.reducer.js';
 
-const defaultReducers = { config: () => config, auth, notification, forms };
+const defaultReducers = { config: () => config, auth, notification, forms, routing: routerReducer };
 
 const getStore = ({ reducers, history }) => {
     reducers = { ...defaultReducers, ...reducers };

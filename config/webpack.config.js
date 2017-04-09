@@ -149,6 +149,7 @@ const webpackConfig = {
 				options: {
 					limit: 15000,
 					mimetype: 'application/font-woff',
+                    name: 'build/assets/fonts/[hash:base64:12].[ext]'
 				},
 			}],
 		},{
@@ -158,6 +159,7 @@ const webpackConfig = {
 				options: {
 					limit: 15000,
 					mimetype: 'application/octet-stream',
+                    name: 'build/assets/fonts/[hash:base64:12].[ext]'
 				},
 			}],
 		},{

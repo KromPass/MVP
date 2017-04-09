@@ -14,6 +14,7 @@ const PM2 = module.exports = {
       ".git",
       "node_modules",
       "build",
+      "cache",
       "assets",
       "uploads",
       "public",

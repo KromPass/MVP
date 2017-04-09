@@ -14,10 +14,12 @@ const defaultState = {
 		children: [{
 			name: 'CrossFit',
 			entity: 'service',
+            icon: 'fitnessCenter',
 			filters: { category: 'CrossFit' },
 		},{
 			name: 'CrossFit Kids',
 			entity: 'service',
+            icon: 'fitnessCenter',
 			filters: { category: 'CrossFit' },
 		}],
 	},{
@@ -27,10 +29,12 @@ const defaultState = {
 		children: [{
 			name: 'CrossFit',
 			entity: 'class',
+            icon: 'schedule',
 			filters: { service: 'CrossFit' },
 		},{
 			name: 'CrossFit Kids',
 			entity: 'class',
+            icon: 'schedule',
 			filters: { service: 'CrossFit' },
 		}]
 	},{

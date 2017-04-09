@@ -1,19 +1,18 @@
 import _ from 'lodash';
 import React from 'react';
+import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 import { connect } from 'react-redux';
 
 import { clean, initForm, submitForm } from './form.actions.js';
 
-const mapStateToProps = (state, props) => ({
+@connect((state, props) => ({
 	formName: props.formName,
 	form: state.forms[props.formName],
-});
-
-@connect(mapStateToProps)
+}))
 export default class Form extends React.Component {
 	static childContextTypes = {
-		formName: React.PropTypes.string.isRequired,
+		formName: PropTypes.string.isRequired,
 	}
 
 	constructor(props) {

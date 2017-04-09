@@ -7,14 +7,6 @@ import { Paper, AppBar, Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle, L
 
 import icons from '../../helpers/icons';
 
-// import IconPeople from 'material-ui/svg-icons/people';
-// import IconAdd from 'material-ui/svg-icons/add';
-// import IconSettings from 'material-ui/svg-icons/settings';
-// import IconEvent from 'material-ui/svg-icons/event';
-// import IconWatch from 'material-ui/svg-icons/watch-later';
-// import IconFitness from 'material-ui/svg-icons/fitness-center';
-// import IconEdit from 'material-ui/svg-icons/mode-edit';
-
 import { signOut } from '../../auth/auth.actions.js';
 
 @connect((state, props) => ({
@@ -72,39 +64,4 @@ export default class Navigation extends React.Component {
 			</Paper>
 		);
 	}
-};
-//
-// <ListItem
-// 	primaryText="Users"
-// 	value={'users'}
-// 	leftIcon={<IconPeople />} containerElement={<Link to="/admin/list/user" />}
-// 	rightIconButton={<IconButton children={<IconAdd />} containerElement={<Link to="/admin/item/user" />} />}
-// />
-//
-// <ListItem
-// 	primaryText="Classes"
-// 	value={'classes'}
-// 	leftIcon={<IconWatch />} containerElement={<Link to="/admin/list/class" />}
-// 	primaryTogglesNestedList={true}
-// 	nestedItems={
-// 		_.map(this.state.disciplines, (value, key) => <ListItem key={key} primaryText={value} leftIcon={<IconFitness />} />)
-// 	}
-// />
-//
-// <ListItem primaryText="Events"
-// 	leftIcon={<IconEvent />}
-// />
-//
-// <ListItem primaryText="Articles"
-// 	leftIcon={<IconEdit />}
-// />
-
-//####
-// <Subheader>Configure</Subheader>
-// <ListItem primaryText="Disciplines" leftIcon={<IconFitness />} />
-// <ListItem primaryText="Classes" leftIcon={<IconWatch />} primaryTogglesNestedList={true} nestedItems={
-// 	_.map(this.state.disciplines, (value, key) => <ListItem key={key} primaryText={value} leftIcon={<IconFitness />} />)
-// } />
-// <ListItem primaryText="Settings" leftIcon={<IconSettings />} />
-// <Divider />
-//
+}

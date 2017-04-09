@@ -9,7 +9,7 @@ import styles from '../../helpers/helpers.scss';
 import { RaisedButton, CircularProgress } from 'material-ui';
 import Form from '../../form/Form.js';
 import Input from '../../form/Input.js';
-import { clean, setEntity, get, add, edit, remove } from '../store/item.actions.js';
+import { clean, setEntity, get, add, edit, remove } from '../reducers/item.actions.js';
 import { authorize } from '../../helpers/authorize.js';
 
 const mapStateToProps = (state, props) => ({

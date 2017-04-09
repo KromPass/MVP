@@ -1,17 +1,19 @@
+import style from './input.scss';
 import _ from 'lodash';
 import React from 'react';
+import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { getContext } from 'recompose';
 
-import { Checkbox, RadioButtonGroup, SelectField, TextField, TextFieldInput, Toggle, IconButton } from 'material-ui';
+import { TextField, TextFieldInput, SelectField, MenuItem, Checkbox, RadioButtonGroup, Toggle, IconButton } from 'material-ui';
 import icons from '../helpers/icons';
 import { pushInput, editInput, change, blur } from './form.actions.js';
 
 const connectWithFormName = (...args) => {
 	return compose(
-    	getContext({ formName: React.PropTypes.string.isRequired }),
+    	getContext({ formName: PropTypes.string.isRequired }),
     	connect(...args)
   	);
 };
@@ -23,7 +25,7 @@ const connectWithFormName = (...args) => {
 }))
 export default class Input extends React.Component {
 	static contextTypes = {
-		formName: React.PropTypes.string.isRequired,
+		formName: PropTypes.string.isRequired,
 	}
 
 	constructor(props, context) {
@@ -32,14 +34,21 @@ export default class Input extends React.Component {
 	}
 
 	componentWillMount() {
-		const input = _.pick(this.props, ['name', 'type', 'required', 'values', 'predefined', 'min', 'max', 'minLength', 'maxLength', 'pattern', 'readonly']);
+		const input = _.pick(this.props, [
+            'name', 'type', 'required', 'predefined',
+            'minLength', 'maxLength', 'pattern',
+            'min', 'max', 'step',
+            'values',
+            'readonly'
+        ]);
 		this.props.dispatch(pushInput({ formName: this.context.formName, input, name: this.props.name }));
   	}
 
 	@autobind
-	change(event, value) {
+	change(event, value, selectValue) {
 		const input = this.props.input;
-		this.props.dispatch(change({ formName: this.context.formName, input, name: this.props.name, value }));
+        const newValue = selectValue || value;
+		this.props.dispatch(change({ formName: this.context.formName, input, name: this.props.name, value: newValue }));
 	}
 
 	@autobind
@@ -67,6 +76,8 @@ export default class Input extends React.Component {
 		if(type == 'password' && visibility)
 			type = 'text';
 
+        console.log(type);
+
 		let properties = {
 			id: input.name,
 			name: input.name,
@@ -75,8 +86,12 @@ export default class Input extends React.Component {
 			floatingLabelFixed: true,
 			value: input.value || '',
 			disabled: input.readonly,
-			maxLength: input.max,
-			minLength: input.min,
+			minLength: input.minLength,
+            maxLength: input.maxLength,
+
+            min: input.min,
+            max: input.max,
+            step: input.step,
 
 			onBlur: this.blur,
 			onChange: this.change,
@@ -85,15 +100,35 @@ export default class Input extends React.Component {
 			errorStyle: { whiteSpace: 'pre' },
 		};
 
-		return (
-			<div className="input-container">
-				<TextField {...properties} className="input" />
-				{ input.type == 'password' && (
-					<IconButton className="input-button" onTouchTap={this.toggleVisibility} iconStyle={{ color: 'grey' }}>
-						{ input.visibility ? <icons.visibilityOff /> : <icons.visibility />}
-					</IconButton>
-				)}
-			</div>
-		);
+        let element;
+
+        if(input.type == 'password') {
+            element = (
+                <div className={style['input-container']}>
+                    <TextField {...properties} className="input" />
+                    <IconButton className={style['input-button']} onTouchTap={this.toggleVisibility} iconStyle={{ color: 'grey' }}>
+                        { input.visibility ? <icons.visibilityOff /> : <icons.visibility />}
+                    </IconButton>
+                </div>
+            );
+        }
+        else if(input.values) {
+            element = (
+                <div className={style['input-container']}>
+                    <SelectField {...properties} value={input.value}>
+                        { input.values.map(value => (<MenuItem key={value} value={value} primaryText={value} />)) }
+                    </SelectField>
+                </div>
+            );
+        }
+        else {
+            element = (
+                <div className={style['input-container']}>
+                    <TextField {...properties} className="input" />
+                </div>
+            );
+        }
+
+		return element;
 	}
 }

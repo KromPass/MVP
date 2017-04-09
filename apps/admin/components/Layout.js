@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import PropTypes from 'prop-types';
 import autobind from 'autobind-decorator';
 import { connect } from 'react-redux';
 
@@ -25,7 +26,7 @@ let theme = getMuiTheme({
 }))
 export default class Layout extends React.Component {
 	static childContextTypes = {
-  		reflexbox: React.PropTypes.object
+  		reflexbox: PropTypes.object
 	}
 
 	constructor(props) {

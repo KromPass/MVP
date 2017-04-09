@@ -15,7 +15,7 @@ import icons from '../../helpers/icons'
 
 import { authorize } from '../../helpers/authorize.js';
 
-import { clean, setEntity, get, add, edit, remove } from '../store/list.actions.js';
+import { clean, setEntity, get, add, edit, remove } from '../reducers/list.actions.js';
 
 const mapStateToProps = (state, props) => ({
 	list: state.list,
