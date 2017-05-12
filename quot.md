@@ -4,16 +4,16 @@
 - faccio io da PM e gestisco tutto io, da cliente a risorse (con tuo supporto quando vanno bastonati chiaramente): dal designer che se no parte per la tangente, al FE che deve sviluppare il mostro per renderlo facilmente bundlabile ad app iOS e Android, etc etc
 - potrei impiegare Davide o Romolo per la parte di FE statico (ovvero transpiling da prototype ad HTML/CSS statico)
 - considera che se entra sto di fatto full solo su questo 5 mesi unbroken
-- picchia pesante, io ho stimato 25k per la parte di sviluppo (ovvero tutto ciò che è il sistema tranne prototype) ma a loro se fanno un preve in giro non chiederanno mai sotto i 100k la a Boston
+- picchia pesante, io chiedo a te 30k per la parte di sviluppo (ovvero tutto ciò che è il sistema tranne prototype) ma a loro gli altri se si fanno fare un preve in giro non chiederanno mai sotto i 100k
 - chiarisci da subito che al termine dello sviluppo dovrà essere concordato un canone di manutenzione della piattaforma per manutenzione macchine, improvements, debugging, supporto agli utilizzatori (gli admins)
 
 #### Cost and timing
-- 5 months development timespan after prototype approval
-- 5mo x 22d x 8h x 30E/h = ~~26.400E~~ 25.000E
+- 6 months development timespan after prototype approval
+- 6mo x 22d x 8h x 30E/h = ~~31.680E~~ 30.000E
 
 ##### Breakdown
-- 3 months (12w) for Front-end development: HTML/CSS/JS/React, iOS and Android app bundling / €12.5k
-- 2 months (8w) for Back-end development: API, pipelines, servers / €12.5k
+- 3 months (12w) for Front-end development: HTML/CSS/JS/React, iOS and Android app bundling / €15k
+- 3 months (12w) for Back-end development: API, pipelines, servers / €15k
 
 ## Main components
 - admin app: back-office
@@ -22,7 +22,10 @@
 
 ### Admin
 Admins will be able to manage the following system entities with both a list view (tabular list of items) and a single view (item details).
+
 Some entities will allow for bulk import/export in csv/xls format for both a better system bootstrapping and its maintenance and monitoring.
+
+Charts and reports will not be included in the following iteration of software after admins feedback on their needs.
 
 Views:
 - stores: import/export
@@ -33,7 +36,6 @@ Views:
 - orders: export
 - deliveries
 - messages: as collected from contact-us view
-Charts and reports will not be included in the following iteration of software after admins feedback on their needs.
 
 ### User
 Public views:
@@ -46,6 +48,7 @@ Public views:
 - checkout: payment and pick-up or delivery handling
 - purchase confirmation: purchase review and confirmation
 - auth: sign-up and sign-up flows
+
 Private views:
 - profile: general info about user
 - addresses: to manage deliveries destination(s)
@@ -53,6 +56,7 @@ Private views:
 - orders list: list of purchases history
 - order item: purchase detail
 - shopping lists: named list of products for quick re-buy
+
 Additional features:
 - filters on list view
 - visitor prompted to sign up just on checkout
