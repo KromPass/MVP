@@ -4,7 +4,7 @@
 - faccio io da PM e gestisco tutto io, da cliente a risorse (con tuo supporto quando vanno bastonati chiaramente): dal designer che se no parte per la tangente, al FE che deve sviluppare il mostro per renderlo facilmente bundlabile ad app iOS e Android, etc etc
 - potrei impiegare Davide o Romolo per la parte di FE statico (ovvero transpiling da prototype ad HTML/CSS statico)
 - considera che se entra sto di fatto full solo su questo 5 mesi unbroken
-- picchia pesante, io chiedo a te 30k per la parte di sviluppo (ovvero tutto ciò che è il sistema tranne prototype) ma a loro gli altri se si fanno fare un preve in giro non chiederanno mai sotto i 100k
+- picchia pesante, io chiedo a te 30k per la parte di sviluppo (ovvero tutto ciò che è il sistema tranne prototype) ma a loro se si fanno fare un preve in giro non chiederanno mai sotto i 100k
 - chiarisci da subito che al termine dello sviluppo dovrà essere concordato un canone di manutenzione della piattaforma per manutenzione macchine, improvements, debugging, supporto agli utilizzatori (gli admins)
 
 #### Cost and timing
